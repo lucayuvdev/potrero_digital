@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="quantity">
+      <label class="screen-reader-text" for="quantity_628bb1ce0b17f"
+        >30 in 1 universal tool repair kit for Apple, Samsung, HTC, Huawei, Sony
+        etc. quantity</label
+      >
+      <input
+        type="number"
+        id="quantity_628bb1ce0b17f"
+        class="input-text qty text"
+        step="1"
+        min="1"
+        max=""
+        name="quantity"
+        value="1"
+        title="Qty"
+        size="4"
+        placeholder=""
+        inputmode="numeric"
+        autocomplete="off"
+      />
+    </div>
+    <script>
+      function qtyIncrease() {
+        document.querySelector("#custom-qty-input input").value += 1;
+        alert("hi");
+      }
+
+      window.onload = () => {
+        var qtyContainer = document.querySelector(".quantity");
+        var qtyInput = document.querySelector("#custom-qty-input input");
+
+        qtyInput.disabled = true;
+        var minus = document.createElement("span");
+        minus.classList.add("qtyModifier");
+        minus.setAttribute("id", "minus");
+        minus.innerText = "-";
+        var plus = document.createElement("span");
+        plus.classList.add("qtyModifier");
+        plus.setAttribute("id", "plus");
+        plus.innerText = "+";
+        qtyContainer.insertBefore(minus, qtyInput);
+        qtyInput.after(plus);
+        plus.addEventListener("click", qtyIncrease);
+      };
+    </script>
+  </body>
+</html>
